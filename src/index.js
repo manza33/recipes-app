@@ -1,3 +1,3 @@
 import "./styles.css";
 
-console.log("Hello word!");
+console.log("Hello Titi!");
