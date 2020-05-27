@@ -1,5 +1,6 @@
 import addSearchInput from "./addSearchInput";
 import addRecipe from "./addRecipe";
+import db from "../db.json";
 
 export default function app() {
   console.log("Run app");
@@ -9,11 +10,9 @@ export default function app() {
 
   addSearchInput(header);
 
-  addRecipe(recipesList);
-  addRecipe(recipesList);
-  addRecipe(recipesList);
-  addRecipe(recipesList);
-  addRecipe(recipesList);
-  addRecipe(recipesList);
+  db.recipes.map((recipe) => {
+    addRecipe(recipesList, recipe);
+  });
+
   //addWarningEmptyList(recipesList);
 }
