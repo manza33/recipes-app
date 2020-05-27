@@ -1,6 +1,6 @@
 import addSearchInput from "./addSearchInput";
 import addRecipe from "./addRecipe";
-import db from "../db.json";
+import responseToJson from "./responseToJson";
 
 export default function app() {
   console.log("Run app");
@@ -10,9 +10,11 @@ export default function app() {
 
   addSearchInput(header);
 
-  db.recipes.map((recipe) => {
-    addRecipe(recipesList, recipe);
-  });
-
-  //addWarningEmptyList(recipesList);
+  fetch("http://localhost:3000/recipes")
+    .then(responseToJson)
+    .then((recipes) => {
+      recipes.map((recipe) => {
+        addRecipe(recipesList, recipe);
+      });
+    });
 }

@@ -4,6 +4,7 @@
   "private": true,
   "description": "",
   "scripts": {
+    "api": "json-server --watch db.json",
     "build": "webpack --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --config webpack.dev.js"
@@ -20,5 +21,8 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "json-server": "^0.16.1"
   }
 }
